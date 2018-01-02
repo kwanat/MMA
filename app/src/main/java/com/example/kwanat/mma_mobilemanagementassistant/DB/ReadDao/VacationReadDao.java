@@ -58,6 +58,19 @@ public class VacationReadDao {
     }
 
 */
+    public List<Vacation> getActual()
+    {
+        QueryBuilder<Vacation, Integer> queryBuilder = vacationDao.queryBuilder();
+
+        try {
+            queryBuilder.where().gt(Vacation.VACATION_END, "curdate()");
+            return queryBuilder.query();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public List<Vacation> getAll() {
         try {
             return vacationDao.queryForAll();

@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         {
             intent = new Intent(this, LoginActivity.class);
         }
-        intent = new Intent(this, StartActivity.class); //Do debugowania
+        intent = new Intent(this, ShowVacationRequests.class); //Do debugowania
         startActivity(intent);
         finish();
 

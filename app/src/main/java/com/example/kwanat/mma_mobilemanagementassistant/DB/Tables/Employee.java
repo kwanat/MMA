@@ -138,4 +138,10 @@ public class Employee {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    @Override
+    public String toString()
+    {
+        return this.first_name + " "+this.last_name;
+    }
 }

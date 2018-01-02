@@ -12,7 +12,7 @@ public class Vacation {
     public static final String VACATION_ID_EMPLOYEE = "Id_employee";
     public static final String VACATION_START = "Start_date";
     public static final String VACATION_END = "End_date";
-    public static final String VACATION_APPROVED = "Approved";
+    public static final String VACATION_STATUS = "Status";
 
     @DatabaseField(generatedId = true, columnName = VACATION_ID)
     private int id;
@@ -26,18 +26,18 @@ public class Vacation {
     @DatabaseField(columnName = VACATION_END)
     private String end;
 
-    @DatabaseField(columnName = VACATION_APPROVED)
-    private String approved;
+    @DatabaseField(columnName = VACATION_STATUS)
+    private String status;
 
     public Vacation()
     {}
 
-    public Vacation(int id, String start, String stop, String approved)
+    public Vacation(int id, String start, String stop, String status)
     {
         this.id_employee=id;
         this.start=start;
         this.end=stop;
-        this.approved=approved;
+        this.status=status;
     }
 
     public int getId() {
@@ -72,11 +72,12 @@ public class Vacation {
         this.end = end;
     }
 
-    public String getApproved() {
-        return approved;
+
+    public String getStatus() {
+        return status;
     }
 
-    public void setApproved(String approved) {
-        this.approved = approved;
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

@@ -27,7 +27,10 @@
         <activity android:name=".AddUserActivity" />
         <activity android:name=".ChangeUserActivity" />
         <activity android:name=".AddMessage" />
-        <activity android:name=".MessageDetailsActivity"></activity>
+        <activity android:name=".MessageDetailsActivity" />
+        <activity android:name=".ShowEmployeeList" />
+        <activity android:name=".AddVacationRequest" />
+        <activity android:name=".ShowVacationRequests"></activity>
     </application>
 
 </manifest>

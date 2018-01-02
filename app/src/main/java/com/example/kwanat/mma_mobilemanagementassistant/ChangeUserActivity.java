@@ -46,9 +46,16 @@ public class ChangeUserActivity extends AppCompatActivity {
         getUser();
         setViews();
         setnewAdapter();
+        checkPermissions();
         setButton();
 
 
+    }
+
+    private void checkPermissions() {
+        LoggedUser user = LoggedUser.getInstance();
+        if(user.getUser().getId_workstation()!=1)
+            worksSpinner.setVisibility(View.GONE);
     }
 
 
@@ -115,8 +122,10 @@ public class ChangeUserActivity extends AppCompatActivity {
         Thread check = new Thread(new Runnable() {
             @Override
             public void run() {
-                LoggedUser instance = LoggedUser.getInstance();
-                int userId=instance.getUser().getId();
+
+                Intent intent = getIntent();
+                int userId= intent.getIntExtra("user_id",0);
+
                 EmployeeReadDao empread = new EmployeeReadDao();
                 user=empread.getById(userId);
             }
