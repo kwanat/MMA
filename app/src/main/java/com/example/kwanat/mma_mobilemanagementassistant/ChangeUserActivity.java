@@ -1,7 +1,6 @@
 package com.example.kwanat.mma_mobilemanagementassistant;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -19,7 +18,7 @@ import com.example.kwanat.mma_mobilemanagementassistant.DB.WriteDao.EmployeeWrit
 
 import java.util.List;
 
-public class ChangeUserActivity extends AppCompatActivity {
+public class ChangeUserActivity extends BaseActivity {
 
     private EditText userNameText;
     private EditText userLastNameText;
@@ -39,8 +38,7 @@ public class ChangeUserActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_change_user);
+        super.onCreate(savedInstanceState, R.layout.activity_change_user);
 
         getWorkstations();
         getUser();
@@ -61,12 +59,12 @@ public class ChangeUserActivity extends AppCompatActivity {
 
     private void setViews()
     {
-        userNameText = (EditText) findViewById(R.id.changeUserName);
-        userLastNameText = (EditText) findViewById(R.id.changeUserLastName);
-        userPeselText = (EditText) findViewById(R.id.changeUserPesel);
+        userNameText = (EditText) findViewById(R.id.oldPassword);
+        userLastNameText = (EditText) findViewById(R.id.repeatOldPassword);
+        userPeselText = (EditText) findViewById(R.id.newPassword);
         userAddressText = (EditText) findViewById(R.id.changeUserAddress);
         userPhoneText = (EditText) findViewById(R.id.changeUserPhoneNumber);
-        userSubmit = (Button) findViewById(R.id.changeUserSubmit);
+        userSubmit = (Button) findViewById(R.id.changePasswordSubmit);
         worksSpinner = (Spinner) findViewById(R.id.changeUserSpinner);
 
 

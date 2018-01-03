@@ -2,6 +2,7 @@ package com.example.kwanat.mma_mobilemanagementassistant;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,7 +16,7 @@ import com.example.kwanat.mma_mobilemanagementassistant.DB.WriteDao.VacationWrit
 
 import java.util.Calendar;
 
-public class AddVacationRequest extends AppCompatActivity {
+public class AddVacationRequest extends BaseActivity {
 
     EditText startDateText;
     EditText endDateText;
@@ -25,8 +26,7 @@ public class AddVacationRequest extends AppCompatActivity {
     final Context context = this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_vacation_request);
+        super.onCreate(savedInstanceState, R.layout.activity_add_vacation_request);
         setView();
         setOnClickStart();
         setOnClick2();
@@ -56,6 +56,9 @@ public class AddVacationRequest extends AppCompatActivity {
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
+                    Toast.makeText(getApplicationContext(),"dodano urlop",Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getApplicationContext(),StartActivity.class);
+                    startActivity(intent);
 
                 }
             }

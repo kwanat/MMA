@@ -1,16 +1,18 @@
 package com.example.kwanat.mma_mobilemanagementassistant;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.kwanat.mma_mobilemanagementassistant.DB.Tables.Employee;
 import com.example.kwanat.mma_mobilemanagementassistant.DB.Tables.Message;
 import com.example.kwanat.mma_mobilemanagementassistant.DB.WriteDao.MessageWriteDao;
 
-public class AddMessage extends AppCompatActivity {
+public class AddMessage extends BaseActivity {
 
     EditText title;
     EditText message;
@@ -18,8 +20,7 @@ public class AddMessage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_message);
+        super.onCreate(savedInstanceState, R.layout.activity_add_message);
         setViews();
         setButtons();
 
@@ -45,6 +46,9 @@ public class AddMessage extends AppCompatActivity {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+                Toast.makeText(getApplicationContext(),"dodano wiadomosc",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(),StartActivity.class);
+                startActivity(intent);
             }
         });
 

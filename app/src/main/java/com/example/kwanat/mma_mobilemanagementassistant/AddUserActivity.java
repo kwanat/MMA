@@ -19,7 +19,7 @@ import com.example.kwanat.mma_mobilemanagementassistant.DB.WriteDao.EmployeeWrit
 
 import java.util.List;
 
-public class AddUserActivity extends AppCompatActivity {
+public class AddUserActivity extends BaseActivity {
     private EditText userFirstNameText;
     private EditText userNameText;
     private EditText userLoginText;
@@ -41,8 +41,7 @@ public class AddUserActivity extends AppCompatActivity {
     private int userWorkstation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_user);
+        super.onCreate(savedInstanceState, R.layout.activity_add_user);
 
         setView();
         getWorkstations();

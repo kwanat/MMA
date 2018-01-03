@@ -1,39 +1,59 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.kwanat.mma_mobilemanagementassistant.AddVacationRequest">
+    android:layout_height="match_parent">
+    <!-- The main content view -->
 
-    <EditText
-        android:id="@+id/vacationStartDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="213dp"
-        android:ems="10"
-        android:hint="Select start date..."
-        android:inputType="textPersonName" />
+    <RelativeLayout
+        android:id="@+id/content_frame"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.kwanat.mma_mobilemanagementassistant.AddVacationRequest">
 
-    <EditText
-        android:id="@+id/vacationEndDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/vacationStartDate"
-        android:layout_alignTop="@+id/vacationStartDate"
-        android:layout_marginTop="51dp"
-        android:ems="10"
-        android:hint="Select end date..."
-        android:inputType="textPersonName" />
+        <EditText
+            android:id="@+id/vacationStartDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="213dp"
+            android:ems="10"
+            android:hint="Select start date..."
+            android:inputType="textPersonName" />
 
-    <Button
-        android:id="@+id/vacationRequestSubmit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/vacationEndDate"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="41dp"
-        android:text="Button" />
+        <EditText
+            android:id="@+id/vacationEndDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/vacationStartDate"
+            android:layout_alignTop="@+id/vacationStartDate"
+            android:layout_marginTop="51dp"
+            android:ems="10"
+            android:hint="Select end date..."
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/vacationRequestSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/vacationEndDate"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="41dp"
+            android:text="Button" />
+    <!-- Put what you want as your normal screen in here, you can also choose for a linear layout or any other layout, whatever you prefer -->
 </RelativeLayout>
+    <!-- The navigation drawer -->
+<ListView
+android:id="@+id/left_drawer"
+android:layout_width="240dp"
+android:layout_height="match_parent"
+android:layout_gravity="start"
+android:background="@android:color/white"
+android:choiceMode="singleChoice"
+android:divider="@android:color/transparent"
+android:dividerHeight="0dp"
+android:headerDividersEnabled="false" />
+    </android.support.v4.widget.DrawerLayout>
+

@@ -17,7 +17,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-public class StartActivity extends AppCompatActivity {
+public class StartActivity extends BaseActivity {
     public static final String TITLE = "TITLE";
     public static final String DATE = "DATE";
     public static final String AUTHOR = "AUTHOR";
@@ -29,8 +29,7 @@ public class StartActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_start);
+        super.onCreate(savedInstanceState, R.layout.activity_start);
         list = (ListView) findViewById(R.id.messagelist);
         getMessages();
         Collections.reverse(messages);

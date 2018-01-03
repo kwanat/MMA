@@ -10,7 +10,7 @@ import com.example.kwanat.mma_mobilemanagementassistant.DB.Tables.Employee;
 
 import org.w3c.dom.Text;
 
-public class MessageDetailsActivity extends AppCompatActivity {
+public class MessageDetailsActivity extends BaseActivity {
     TextView title;
     TextView author;
     TextView pubDate;
@@ -20,8 +20,7 @@ public class MessageDetailsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_message_details);
+        super.onCreate(savedInstanceState, R.layout.activity_message_details);
         title = (TextView) findViewById(R.id.messageTitle);
         author = (TextView) findViewById(R.id.messageAuthor);
         pubDate = (TextView) findViewById(R.id.messagePubDate);

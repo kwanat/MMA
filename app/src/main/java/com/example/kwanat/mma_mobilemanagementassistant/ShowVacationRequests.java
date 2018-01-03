@@ -23,7 +23,7 @@ import com.example.kwanat.mma_mobilemanagementassistant.DB.WriteDao.VacationWrit
 import java.util.ArrayList;
 import java.util.List;
 
-public class ShowVacationRequests extends AppCompatActivity {
+public class ShowVacationRequests extends BaseActivity {
 
     ListView employeeList;
     ArrayAdapter<Vacation> adapter;
@@ -49,8 +49,7 @@ public class ShowVacationRequests extends AppCompatActivity {
     }
         @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_show_vacation_requests);
+        super.onCreate(savedInstanceState, R.layout.activity_show_vacation_requests);
 
         setView();
         getWorkers();

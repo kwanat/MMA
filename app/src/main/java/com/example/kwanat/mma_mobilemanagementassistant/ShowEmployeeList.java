@@ -17,7 +17,7 @@ import com.example.kwanat.mma_mobilemanagementassistant.DB.WriteDao.EmployeeWrit
 
 import java.util.List;
 
-public class ShowEmployeeList extends AppCompatActivity {
+public class ShowEmployeeList extends BaseActivity {
     ListView emplist;
     List<Employee> employeeList;
     ArrayAdapter<Employee> adapter;
@@ -27,8 +27,7 @@ public class ShowEmployeeList extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_show_employee_list);
+        super.onCreate(savedInstanceState, R.layout.activity_show_employee_list);
         emplist= (ListView) findViewById(R.id.employeeList);
         getWorkers();
         setDialogBox();

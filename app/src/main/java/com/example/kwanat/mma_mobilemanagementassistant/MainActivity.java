@@ -11,6 +11,7 @@ import com.example.kwanat.mma_mobilemanagementassistant.DB.Tables.Employee;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -24,9 +25,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        prepareMenuLists();
         user=LoggedUser.getInstance();
         preferences = getSharedPreferences(LoggedUser.PREFERENCE_NAME, Activity.MODE_PRIVATE);
         SharedPreferences.Editor preferencesEditor = preferences.edit();
+
 
 
         id=preferences.getInt(LoggedUser.USER_ID,0);
@@ -67,11 +70,50 @@ public class MainActivity extends AppCompatActivity {
         {
             intent = new Intent(this, LoginActivity.class);
         }
-        intent = new Intent(this, ShowVacationRequests.class); //Do debugowania
+        //intent = new Intent(this, ShowVacationRequests.class); //Do debugowania
         startActivity(intent);
         finish();
 
 
 
+    }
+
+    private void prepareMenuLists() {
+        MenuItems lists = MenuItems.getInstance();
+        ArrayList<String> temp=new ArrayList<>();
+        ArrayList<String> temp1=new ArrayList<>();
+        ArrayList<String> temp2=new ArrayList<>();
+        temp.add(getResources().getString(R.string.homeMenu));
+        temp.add(getResources().getString(R.string.addMessageMenu));
+        temp.add(getResources().getString(R.string.viewWarehouseMenu));
+        temp.add(getResources().getString(R.string.changeDataMenu));
+        temp.add(getResources().getString(R.string.addVacationMenu));
+        temp.add(getResources().getString(R.string.myVacationMenu));
+        temp.add(getResources().getString(R.string.addScheduleMenu));
+        temp.add(getResources().getString(R.string.passwordMenu));
+        temp.add(getResources().getString(R.string.logoutMenu));
+        lists.setEmployeeMenu(temp);
+
+        temp1.add(getResources().getString(R.string.homeMenu));
+        temp1.add(getResources().getString(R.string.addMessageMenu));
+        temp1.add(getResources().getString(R.string.viewWarehouseMenu));
+        temp1.add(getResources().getString(R.string.changeDataMenu));
+        temp1.add(getResources().getString(R.string.addScheduleMenu));
+        temp1.add(getResources().getString(R.string.showVacationMenu));
+        temp1.add(getResources().getString(R.string.passwordMenu));
+        temp1.add(getResources().getString(R.string.logoutMenu));
+        lists.setManagerMenu(temp1);
+
+        temp2.add(getResources().getString(R.string.homeMenu));
+        temp2.add(getResources().getString(R.string.addMessageMenu));
+        temp2.add(getResources().getString(R.string.viewWarehouseMenu));
+        temp2.add(getResources().getString(R.string.changeDataMenu));
+        temp2.add(getResources().getString(R.string.showVacationMenu));
+        temp2.add(getResources().getString(R.string.showScheduleMenu));
+        temp2.add(getResources().getString(R.string.showEmployeesMenu));
+        temp2.add(getResources().getString(R.string.addEmployeeMenu));
+        temp2.add(getResources().getString(R.string.passwordMenu));
+        temp2.add(getResources().getString(R.string.logoutMenu));
+        lists.setOwnerMenu(temp2);
     }
 }

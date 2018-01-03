@@ -1,83 +1,104 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.kwanat.mma_mobilemanagementassistant.AddUserActivity">
+    android:layout_height="match_parent">
+    <!-- The main content view -->
 
-    <Button
-        android:id="@+id/addUserSubmit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteY="447dp"
-        tools:layout_editor_absoluteX="148dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="15dp" />
-
-    <EditText
-        android:id="@+id/addUserName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Name"
-        android:inputType="textPersonName"
-        tools:layout_editor_absoluteY="130dp"
-        tools:layout_editor_absoluteX="85dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="118dp" />
-
-    <EditText
-        android:id="@+id/addUserLastName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Last name"
-        android:inputType="textPersonName"
-        tools:layout_editor_absoluteY="72dp"
-        tools:layout_editor_absoluteX="85dp"
-        android:layout_below="@+id/addUserName"
-        android:layout_alignStart="@+id/addUserName"
-        android:layout_marginTop="17dp" />
-
-    <EditText
-        android:id="@+id/addUserLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Login"
-        android:inputType="textPersonName"
-        tools:layout_editor_absoluteY="192dp"
-        tools:layout_editor_absoluteX="85dp"
-        android:layout_centerVertical="true"
-        android:layout_alignStart="@+id/addUserLastName" />
-
-    <EditText
-        android:id="@+id/addUserPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPersonName"
-        tools:layout_editor_absoluteY="250dp"
-        tools:layout_editor_absoluteX="85dp"
-        android:layout_marginTop="19dp"
-        android:layout_below="@+id/addUserLogin"
-        android:layout_alignStart="@+id/addUserLogin" />
-
-    <Spinner
-        android:id="@+id/addUserSpinner"
+    <RelativeLayout
+        android:id="@+id/content_frame"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_below="@+id/addUserPassword"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:background="@color/colorPrimary"
-        android:dropDownWidth="match_parent"
-        android:visibility="visible"
-        tools:layout_editor_absoluteX="51dp"
-        tools:layout_editor_absoluteY="343dp" />
+        android:layout_height="match_parent"
+        tools:context="com.example.kwanat.mma_mobilemanagementassistant.AddUserActivity">
+
+        <Button
+            android:id="@+id/addUserSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            tools:layout_editor_absoluteY="447dp"
+            tools:layout_editor_absoluteX="148dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="15dp" />
+
+        <EditText
+            android:id="@+id/addUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            tools:layout_editor_absoluteY="130dp"
+            tools:layout_editor_absoluteX="85dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="118dp" />
+
+        <EditText
+            android:id="@+id/addUserLastName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Last name"
+            android:inputType="textPersonName"
+            tools:layout_editor_absoluteY="72dp"
+            tools:layout_editor_absoluteX="85dp"
+            android:layout_below="@+id/addUserName"
+            android:layout_alignStart="@+id/addUserName"
+            android:layout_marginTop="17dp" />
+
+        <EditText
+            android:id="@+id/addUserLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Login"
+            android:inputType="textPersonName"
+            tools:layout_editor_absoluteY="192dp"
+            tools:layout_editor_absoluteX="85dp"
+            android:layout_centerVertical="true"
+            android:layout_alignStart="@+id/addUserLastName" />
+
+        <EditText
+            android:id="@+id/addUserPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPersonName"
+            tools:layout_editor_absoluteY="250dp"
+            tools:layout_editor_absoluteX="85dp"
+            android:layout_marginTop="19dp"
+            android:layout_below="@+id/addUserLogin"
+            android:layout_alignStart="@+id/addUserLogin" />
+
+        <Spinner
+            android:id="@+id/addUserSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/addUserPassword"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimary"
+            android:dropDownWidth="match_parent"
+            android:visibility="visible"
+            tools:layout_editor_absoluteX="51dp"
+            tools:layout_editor_absoluteY="343dp" />
+    <!-- Put what you want as your normal screen in here, you can also choose for a linear layout or any other layout, whatever you prefer -->
 </RelativeLayout>
+    <!-- The navigation drawer -->
+<ListView
+android:id="@+id/left_drawer"
+android:layout_width="240dp"
+android:layout_height="match_parent"
+android:layout_gravity="start"
+android:background="@android:color/white"
+android:choiceMode="singleChoice"
+android:divider="@android:color/transparent"
+android:dividerHeight="0dp"
+android:headerDividersEnabled="false" />
+    </android.support.v4.widget.DrawerLayout>
+
+

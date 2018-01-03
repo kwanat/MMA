@@ -30,7 +30,10 @@
         <activity android:name=".MessageDetailsActivity" />
         <activity android:name=".ShowEmployeeList" />
         <activity android:name=".AddVacationRequest" />
-        <activity android:name=".ShowVacationRequests"></activity>
+        <activity android:name=".ShowVacationRequests" />
+        <activity android:name=".BaseActivity" />
+        <activity android:name=".ChangePasswordActivity" />
+        <activity android:name=".ShowUserVacationActivity"></activity>
     </application>
 
 </manifest>

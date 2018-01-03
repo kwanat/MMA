@@ -81,4 +81,15 @@ public class VacationReadDao {
         return null;
     }
 
+    public List<Vacation> getForUser(int id) {
+        QueryBuilder<Vacation, Integer> queryBuilder = vacationDao.queryBuilder();
+
+        try {
+            queryBuilder.where().eq(Vacation.VACATION_ID_EMPLOYEE, id);
+            return vacationDao.query(queryBuilder.prepare());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
