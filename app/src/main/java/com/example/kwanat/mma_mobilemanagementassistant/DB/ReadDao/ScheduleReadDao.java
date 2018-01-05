@@ -58,6 +58,20 @@ public class ScheduleReadDao {
         return null;
     }
 
+    public List<Schedule> getForDay(String day) {
+        QueryBuilder<Schedule, Integer> queryBuilder = scheduleDao.queryBuilder();
+
+        try {
+            queryBuilder.where().like(Schedule.SCHEDULE_DATE,day);
+            return scheduleDao.query(queryBuilder.prepare());
+        }
+        catch (SQLException e) {
+            Log.e(TAG, e.getMessage());
+        }
+        return null;
+    }
+
+
     public List<Schedule> getForWorker(int id) {
         QueryBuilder<Schedule, Integer> queryBuilder = scheduleDao.queryBuilder();
 
@@ -70,6 +84,8 @@ public class ScheduleReadDao {
         }
         return null;
     }
+
+
 
 
     public List<Schedule> getAll() {

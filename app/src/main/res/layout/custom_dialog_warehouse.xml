@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/addQuantityButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/addquantity" />
+
+    <EditText
+        android:id="@+id/addQuantityValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/quantityadd"
+        android:inputType="number"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/addQuantitySubmitButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/submitButton"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/getQuantityButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/getquantity" />
+
+    <EditText
+        android:id="@+id/getQuantityValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/quantityadd"
+        android:inputType="number"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/getQuantitySubmitButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/submitButton"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/WarehouseDialogCancelButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel" />
+</LinearLayout>

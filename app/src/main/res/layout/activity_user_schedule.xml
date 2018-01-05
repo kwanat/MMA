@@ -10,53 +10,51 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.example.kwanat.mma_mobilemanagementassistant.ChangePasswordActivity">
+        tools:context="com.example.kwanat.mma_mobilemanagementassistant.UserScheduleActivity">
+
+
+        <!-- Put what you want as your normal screen in here, you can also choose for a linear layout or any other layout, whatever you prefer -->
 
         <EditText
-            android:id="@+id/oldPassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/repeatOldPassword"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="16dp"
-            android:ems="10"
-            android:hint="@string/passwordHint"
-            android:inputType="textPassword" />
-
-        <EditText
-            android:id="@+id/repeatOldPassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/newPassword"
-            android:layout_alignStart="@+id/oldPassword"
-            android:layout_marginBottom="22dp"
-            android:ems="10"
-            android:hint="@string/repeatPasswordHint"
-            android:inputType="textPassword" />
-
-        <EditText
-            android:id="@+id/newPassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/changePasswordSubmit"
-            android:layout_alignStart="@+id/repeatOldPassword"
-            android:layout_marginBottom="57dp"
-            android:ems="10"
-            android:hint="@string/newPasswordHint"
-            android:inputType="textPassword" />
-
-
-        <Button
-            android:id="@+id/changePasswordSubmit"
+            android:id="@+id/scheduleStartTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="64dp"
+            android:layout_marginBottom="199dp"
+            android:hint="@string/startTimeHint"
+            android:ems="10"
+            android:inputType="time" />
+
+        <EditText
+            android:id="@+id/scheduleEndTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/scheduleStartTime"
+            android:layout_alignTop="@+id/scheduleStartTime"
+            android:layout_marginTop="52dp"
+            android:hint="@string/endTimeHint"
+            android:ems="10"
+            android:inputType="time" />
+
+        <Button
+            android:id="@+id/addScheduleSubmitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/scheduleEndTime"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="39dp"
             android:text="@string/submitButton" />
 
-
-        <!-- Put what you want as your normal screen in here, you can also choose for a linear layout or any other layout, whatever you prefer -->
+        <TextView
+            android:id="@+id/dateText"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_above="@+id/scheduleStartTime"
+            android:layout_alignEnd="@+id/scheduleStartTime"
+            android:layout_alignStart="@+id/scheduleStartTime"
+            android:layout_marginBottom="25dp"
+            android:text="TextView" />
     </RelativeLayout>
     <!-- The navigation drawer -->
     <ListView

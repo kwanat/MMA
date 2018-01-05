@@ -59,9 +59,9 @@ public class ChangeUserActivity extends BaseActivity {
 
     private void setViews()
     {
-        userNameText = (EditText) findViewById(R.id.oldPassword);
-        userLastNameText = (EditText) findViewById(R.id.repeatOldPassword);
-        userPeselText = (EditText) findViewById(R.id.newPassword);
+        userNameText = (EditText) findViewById(R.id.changeUserFirstName);
+        userLastNameText = (EditText) findViewById(R.id.changeUserLastName);
+        userPeselText = (EditText) findViewById(R.id.changeUserPesel);
         userAddressText = (EditText) findViewById(R.id.changeUserAddress);
         userPhoneText = (EditText) findViewById(R.id.changeUserPhoneNumber);
         userSubmit = (Button) findViewById(R.id.changePasswordSubmit);
@@ -70,8 +70,11 @@ public class ChangeUserActivity extends BaseActivity {
 
         userNameText.setText(user.getFirst_name());
         userLastNameText.setText(user.getLast_name());
+        if(user.getPesel()!=null)
         userPeselText.setText(user.getPesel());
+        if(user.getAddress()!=null)
         userAddressText.setText(user.getAddress());
+        if(user.getPhone_number()!=0)
         userPhoneText.setText(String.valueOf(user.getPhone_number()));
 
     }
@@ -144,6 +147,7 @@ public class ChangeUserActivity extends BaseActivity {
                 user.setLast_name(userLastNameText.getText().toString());
                 user.setPesel(userPeselText.getText().toString());
                 user.setAddress(userAddressText.getText().toString());
+                if(!userPhoneText.getText().toString().equals(""))
                 user.setPhone_number(Integer.parseInt(userPhoneText.getText().toString().replaceAll("[\\D]","")));
 
                 Thread add = new Thread(new Runnable() {
@@ -161,7 +165,7 @@ public class ChangeUserActivity extends BaseActivity {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                Toast.makeText(getApplicationContext(),"dane zostaly zmienione",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),getResources().getString(R.string.dataChanged),Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent (getApplicationContext(), StartActivity.class);
                 startActivity(intent);
                 finish();

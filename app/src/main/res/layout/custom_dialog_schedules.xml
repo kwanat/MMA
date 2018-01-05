@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/changeStartTimeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/changeStartTimeButton" />
+
+    <EditText
+        android:id="@+id/changeStartTimeValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/startTimeHint"
+        android:inputType="time"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/changeStartTimeSubmitButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/submitButton"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/changeEndTimeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/changeEndTimeButton" />
+
+    <EditText
+        android:id="@+id/changeEndTimeValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/endTimeHint"
+        android:inputType="time"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/changeEndTimeSubmitButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/submitButton"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/confirmScheduleButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/confirmScheduleButton" />
+
+    <Button
+        android:id="@+id/changeTimeCancelButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel" />
+</LinearLayout>

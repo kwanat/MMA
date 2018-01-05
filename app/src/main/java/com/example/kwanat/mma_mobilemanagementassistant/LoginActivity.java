@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 if(user==null)
                 {
-                    Toast.makeText(getApplicationContext(),"podano zle dane",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),getResources().getString(R.string.incorrectCredencials),Toast.LENGTH_SHORT).show();
                 }
                 else
                 {

@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.support.annotation.LayoutRes;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -16,9 +15,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.kwanat.mma_mobilemanagementassistant.R;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class BaseActivity extends AppCompatActivity
@@ -113,6 +109,16 @@ public class BaseActivity extends AppCompatActivity
                 if(item.equals(getResources().getString(R.string.myVacationMenu)))
                 {
                     intent=new Intent(getApplicationContext(),ShowUserVacationActivity.class);
+                    startActivity(intent);
+                }
+                if(item.equals(getResources().getString(R.string.viewWarehouseMenu)))
+                {
+                    intent=new Intent(getApplicationContext(),ShowWarehouseActivity.class);
+                    startActivity(intent);
+                }
+                if(item.equals(getResources().getString(R.string.scheduleMenu)))
+                {
+                    intent=new Intent(getApplicationContext(),ScheduleActivity.class);
                     startActivity(intent);
                 }
                 if(item.equals(getResources().getString(R.string.changeDataMenu)))

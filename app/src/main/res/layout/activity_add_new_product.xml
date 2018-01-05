@@ -1,0 +1,81 @@
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- The main content view -->
+
+    <RelativeLayout
+        android:id="@+id/content_frame"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.kwanat.mma_mobilemanagementassistant.AddNewProductActivity">
+
+
+        <!-- Put what you want as your normal screen in here, you can also choose for a linear layout or any other layout, whatever you prefer -->
+        <EditText
+            android:id="@+id/addProductName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="155dp"
+            android:hint="@string/productNameHint"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/addProductQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:hint="@string/productStartQuantity"
+            android:ems="10"
+            android:inputType="number"
+            android:layout_below="@+id/addProductName"
+            android:layout_alignStart="@+id/addProductName" />
+
+        <EditText
+            android:id="@+id/addProductCriticalQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:hint="@string/productCriticalQuantity"
+            android:ems="10"
+            android:inputType="number"
+            android:layout_below="@+id/addProductQuantity"
+            android:layout_alignStart="@+id/addProductQuantity" />
+
+        <Spinner
+            android:id="@+id/adCategoryProductSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/addProductCriticalQuantity"
+            android:layout_marginTop="20dp"
+            android:background="@color/colorPrimary" />
+
+        <Button
+            android:id="@+id/addProductSubmitButton"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="44dp"
+            android:text="@string/addProductButton" />
+    </RelativeLayout>
+    <!-- The navigation drawer -->
+    <ListView
+        android:id="@+id/left_drawer"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@android:color/white"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
+        android:headerDividersEnabled="false" />
+</android.support.v4.widget.DrawerLayout>
+
+

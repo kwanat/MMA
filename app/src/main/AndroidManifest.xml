@@ -33,7 +33,12 @@
         <activity android:name=".ShowVacationRequests" />
         <activity android:name=".BaseActivity" />
         <activity android:name=".ChangePasswordActivity" />
-        <activity android:name=".ShowUserVacationActivity"></activity>
+        <activity android:name=".ShowUserVacationActivity" />
+        <activity android:name=".ShowWarehouseActivity" />
+        <activity android:name=".AddNewProductActivity" />
+        <activity android:name=".ScheduleActivity" />
+        <activity android:name=".OwnerScheduleActivity" />
+        <activity android:name=".UserScheduleActivity"></activity>
     </application>
 
 </manifest>

@@ -13,32 +13,35 @@
         tools:context="com.example.kwanat.mma_mobilemanagementassistant.ChangeUserActivity">
 
         <EditText
-            android:id="@+id/oldPassword"
+            android:id="@+id/changeUserFirstName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="11dp"
+            android:hint="@string/firstNameHint"
             android:ems="10"
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/repeatOldPassword"
+            android:id="@+id/changeUserLastName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/oldPassword"
+            android:layout_below="@+id/changeUserFirstName"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="12dp"
+            android:hint="@string/lastNameHint"
             android:ems="10"
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/newPassword"
+            android:id="@+id/changeUserPesel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/repeatOldPassword"
-            android:layout_below="@+id/repeatOldPassword"
+            android:layout_alignEnd="@+id/changeUserLastName"
+            android:layout_below="@+id/changeUserLastName"
             android:layout_marginTop="11dp"
+            android:hint="@string/peselHint"
             android:ems="10"
             android:inputType="textPersonName" />
 
@@ -46,10 +49,11 @@
             android:id="@+id/changeUserAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/newPassword"
-            android:layout_below="@+id/newPassword"
+            android:layout_alignStart="@+id/changeUserPesel"
+            android:layout_below="@+id/changeUserPesel"
             android:layout_marginTop="15dp"
             android:ems="10"
+            android:hint="@string/addressHint"
             android:inputType="textPersonName" />
 
         <EditText
@@ -59,6 +63,7 @@
             android:layout_alignStart="@+id/changeUserAddress"
             android:layout_centerVertical="true"
             android:ems="10"
+            android:hint="@string/phoneNumberHint"
             android:inputType="textPersonName" />
 
 

@@ -85,9 +85,65 @@ public class WarehouseReadDao {
     }
 
 
+    public List<Warehouse> getTechnicalLowQuantity() {
+        QueryBuilder<Warehouse, Integer> queryBuilder = warehouseDao.queryBuilder();
+
+        try {
+            queryBuilder.where().le(Warehouse.WAREHOUSE_ACTUAL_QUANTITY, new ColumnArg(Warehouse.WAREHOUSE_CRITICAL_QUANTITY))
+            .and().eq(Warehouse.WAREHOUSE_ID_CATEGORY,1);
+            return warehouseDao.query(queryBuilder.prepare());
+        }
+        catch (SQLException e) {
+            Log.e(TAG, e.getMessage());
+        }
+        return null;
+    }
+
+
+    public List<Warehouse> getNotTechnicalLowQuantity() {
+        QueryBuilder<Warehouse, Integer> queryBuilder = warehouseDao.queryBuilder();
+
+        try {
+            queryBuilder.where().le(Warehouse.WAREHOUSE_ACTUAL_QUANTITY, new ColumnArg(Warehouse.WAREHOUSE_CRITICAL_QUANTITY))
+                    .and().eq(Warehouse.WAREHOUSE_ID_CATEGORY,2);;
+            return warehouseDao.query(queryBuilder.prepare());
+        }
+        catch (SQLException e) {
+            Log.e(TAG, e.getMessage());
+        }
+        return null;
+    }
+
+
     public List<Warehouse> getAll() {
         try {
             return warehouseDao.queryForAll();
+        }
+        catch (SQLException e) {
+            Log.e(TAG, e.getMessage());
+        }
+        return null;
+    }
+
+    public List<Warehouse> getAllTechnical() {
+        QueryBuilder<Warehouse, Integer> queryBuilder = warehouseDao.queryBuilder();
+
+        try {
+            queryBuilder.where().eq(Warehouse.WAREHOUSE_ID_CATEGORY,2);;
+            return warehouseDao.query(queryBuilder.prepare());
+        }
+        catch (SQLException e) {
+            Log.e(TAG, e.getMessage());
+        }
+        return null;
+    }
+
+    public List<Warehouse> getAllNotTechnical() {
+        QueryBuilder<Warehouse, Integer> queryBuilder = warehouseDao.queryBuilder();
+
+        try {
+            queryBuilder.where().eq(Warehouse.WAREHOUSE_ID_CATEGORY,2);;
+            return warehouseDao.query(queryBuilder.prepare());
         }
         catch (SQLException e) {
             Log.e(TAG, e.getMessage());

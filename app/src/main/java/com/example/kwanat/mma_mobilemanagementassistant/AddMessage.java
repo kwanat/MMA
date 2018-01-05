@@ -46,7 +46,7 @@ public class AddMessage extends BaseActivity {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                Toast.makeText(getApplicationContext(),"dodano wiadomosc",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),getResources().getString(R.string.messageAdded),Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(),StartActivity.class);
                 startActivity(intent);
             }

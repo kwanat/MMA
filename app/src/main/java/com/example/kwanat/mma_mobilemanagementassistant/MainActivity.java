@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         temp.add(getResources().getString(R.string.changeDataMenu));
         temp.add(getResources().getString(R.string.addVacationMenu));
         temp.add(getResources().getString(R.string.myVacationMenu));
-        temp.add(getResources().getString(R.string.addScheduleMenu));
+        temp.add(getResources().getString(R.string.scheduleMenu));
         temp.add(getResources().getString(R.string.passwordMenu));
         temp.add(getResources().getString(R.string.logoutMenu));
         lists.setEmployeeMenu(temp);
@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
         temp1.add(getResources().getString(R.string.addMessageMenu));
         temp1.add(getResources().getString(R.string.viewWarehouseMenu));
         temp1.add(getResources().getString(R.string.changeDataMenu));
-        temp1.add(getResources().getString(R.string.addScheduleMenu));
+        temp1.add(getResources().getString(R.string.scheduleMenu));
         temp1.add(getResources().getString(R.string.showVacationMenu));
         temp1.add(getResources().getString(R.string.passwordMenu));
         temp1.add(getResources().getString(R.string.logoutMenu));
@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
         temp2.add(getResources().getString(R.string.viewWarehouseMenu));
         temp2.add(getResources().getString(R.string.changeDataMenu));
         temp2.add(getResources().getString(R.string.showVacationMenu));
-        temp2.add(getResources().getString(R.string.showScheduleMenu));
+        temp2.add(getResources().getString(R.string.scheduleMenu));
         temp2.add(getResources().getString(R.string.showEmployeesMenu));
         temp2.add(getResources().getString(R.string.addEmployeeMenu));
         temp2.add(getResources().getString(R.string.passwordMenu));

@@ -49,6 +49,13 @@ public class Schedule {
         this.approved=approved;
     }
 
+    public Schedule(int id_employee, String day, String approved)
+    {
+        this.id_employee=id_employee;
+        this.date=day;
+        this.approved=approved;
+    }
+
 
     public int getId() {
         return id;

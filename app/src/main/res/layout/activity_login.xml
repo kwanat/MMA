@@ -14,7 +14,7 @@
         android:layout_alignStart="@+id/password"
         android:layout_marginBottom="36dp"
         android:ems="10"
-        android:hint="Login"
+        android:hint="@string/loginHint"
         android:inputType="textPersonName"
         tools:layout_editor_absoluteX="85dp"
         tools:layout_editor_absoluteY="248dp" />
@@ -27,7 +27,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="45dp"
         android:ems="10"
-        android:hint="Password"
+        android:hint="@string/passwordHint"
         android:inputType="textPassword"
         tools:layout_editor_absoluteX="85dp"
         tools:layout_editor_absoluteY="325dp" />
@@ -36,7 +36,7 @@
         android:id="@+id/login_submit"
         android:layout_width="174dp"
         android:layout_height="60dp"
-        android:text="Button"
+        android:text="@string/submitButton"
         tools:layout_editor_absoluteX="105dp"
         tools:layout_editor_absoluteY="427dp"
         android:layout_alignParentBottom="true"

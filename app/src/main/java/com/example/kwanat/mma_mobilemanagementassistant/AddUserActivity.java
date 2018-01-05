@@ -147,31 +147,42 @@ public class AddUserActivity extends BaseActivity {
                 userName=userNameText.getText().toString();
                 userLogin=userLoginText.getText().toString();
                 userPassword=Sha1Crypt.encryptPassword(userPasswordText.getText().toString());
-                // TODO:  dodanie usera do bazy po wyborze stanowiska
-                checkUser();
-                if(newuser!=null)
-                {
-                    Toast.makeText(getApplicationContext(),"Login jest zajety",Toast.LENGTH_LONG).show();
+                if(checkfields()) {
+                    checkUser();
+                    if (newuser != null) {
+                        Toast.makeText(getApplicationContext(), getResources().getString(R.string.loginTaken), Toast.LENGTH_LONG).show();
+                    } else {
+
+                        addUser();
+                        checkUser();
+                        if (newuser != null) {
+                            Toast.makeText(getApplicationContext(), getResources().getString(R.string.userAdded), Toast.LENGTH_LONG).show();
+                            Intent intent = new Intent(getApplicationContext(), StartActivity.class);
+                            startActivity(intent);
+                            finish();
+                        } else {
+                            Toast.makeText(getApplicationContext(), getResources().getString(R.string.databaseConnectionFailed), Toast.LENGTH_LONG).show();
+                        }
+                    }
                 }
                 else
-                {
+                    Toast.makeText(getApplicationContext(), getResources().getString(R.string.missingFields), Toast.LENGTH_LONG).show();
 
-                    addUser();
-                    checkUser();
-                    if(newuser!=null)
-                    {
-                        Toast.makeText(getApplicationContext(),"Dodano uzytkownika",Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent (getApplicationContext(), StartActivity.class);
-                        startActivity(intent);
-                        finish();
-                    }
-                    else
-                    {
-                        Toast.makeText(getApplicationContext(),"Blad polaczenia z baza",Toast.LENGTH_LONG).show();
-                    }
-                }
+
 
             }
         });
+    }
+
+    private boolean checkfields() {
+        if(userFirstName.isEmpty())
+            return false;
+        if(userName.isEmpty())
+            return false;
+        if(userLogin.isEmpty())
+            return false;
+        if(userPassword.isEmpty())
+            return false;
+        return true;
     }
 }

@@ -2,13 +2,40 @@
     <string name="app_name">MMA-MobileManagementAssistant</string>
     <string name="title_activity_login">Sign in</string>
 
-
+    <!-- Strings related to BUTTONS -->
     <string name="submitButton">Submit</string>
+    <string name="addWarehouseItemButton">Add new product</string>
+    <string name="showCriticalConditionButton">Show item with critical quantity</string>
+    <string name="showAllItemsButton">Show all warehouse items</string>
+    <string name="loginButton">SIGN IN</string>
+    <string name="addProductButton">Add product</string>
+    <string name="changeStartTimeButton">Change start time</string>
+    <string name="changeEndTimeButton">Change end time</string>
+    <string name="confirmScheduleButton">Confirm schedule</string>
+
+    <!-- Strings related to DATA HINTS -->
     <string name="loginHint">Login</string>
     <string name="passwordHint">Password</string>
+    <string name="firstNameHint">First name</string>
+    <string name="lastNameHint">Last name</string>
+    <string name="addressHint">Address</string>
+    <string name="peselHint">Pesel</string>
+    <string name="phoneNumberHint">Phone number</string>
     <string name="repeatPasswordHint">Repeat password</string>
     <string name="newPasswordHint">New password</string>
+    <string name="titleHint">Title</string>
+    <string name="messageHint">Message</string>
+    <string name="startDateHint">Select start date</string>
+    <string name="endDateHint">Select end date</string>
+    <string name="productNameHint">Product name</string>
+    <string name="productStartQuantity">Quantity</string>
+    <string name="productCriticalQuantity">Critical Quantity</string>
+    <string name="quantityadd">Type quantity</string>
+    <string name="startTimeHint">Select start time</string>
+    <string name="endTimeHint">Select end time</string>
+    <string name="date">Date</string>
 
+    <!-- Strings related to NAVIGATION BAR -->
     <string name="drawer_open">Menu</string>
     <string name="drawer_closed">MMA</string>
     <string name="menu">Menu</string>
@@ -26,6 +53,16 @@
     <string name="passwordsinequal">Passwword are not the same</string>
     <string name="passwordIncorrect">Password is not correct</string>
     <string name="passwordEmpty">New password is empty</string>
+    <string name="incorrectCredencials">Login or password is incorrect</string>
+    <string name="databaseConnectionFailed">Database connection failed</string>
+    <string name="userAdded">User has been added</string>
+    <string name="loginTaken">This login is not available</string>
+    <string name="missingFields">Not all firlds are filled</string>
+    <string name="messageAdded">Message has been added</string>
+    <string name="vacationRequestAdded">Vacation request added</string>
+    <string name="dateLower">End date is lower than End date </string>
+    <string name="emptyField">The field is empty</string>
+    <string name="valueTooHigh">Value is to high</string>
 
     <!-- Strings related to MENU -->
     <string name="homeMenu">HOME</string>
@@ -38,10 +75,21 @@
 
 
     <string name="addVacationMenu">VACATION</string>
-    <string name="addScheduleMenu">ADD SCHEDULE</string>
+    <string name="scheduleMenu">SCHEDULE</string>
     <string name="showVacationMenu">VACATION REQUESTS</string>
-    <string name="showScheduleMenu">SCHEDULE</string>
     <string name="showEmployeesMenu">EMPLOYEES</string>
     <string name="addEmployeeMenu">NEW EMPLOYEE</string>
+
+    <!-- Strings related to DIALOG -->
+    <string name="cancel">CANCEL</string>
+    <string name="delete">DELETE</string>
+    <string name="change">CHANGE</string>
+    <string name="addquantity">ADD QUANTITY</string>
+    <string name="getquantity">GET QUANTITY</string>
+
+
+    <!-- Strings related to WAREHOUSE -->
+    <string name="actual">Actual state</string>
+    <string name="critical">Critical</string>
 
 </resources>

@@ -38,7 +38,7 @@ public class AddVacationRequest extends BaseActivity {
             @Override
             public void onClick(View v) {
                 if((startDate>endDate)||(startDate==0)||(endDate==0))
-                    Toast.makeText(getApplicationContext(),"data zakonczenia jest wczesniejsza niz data startu",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),getResources().getString(R.string.dateLower),Toast.LENGTH_SHORT).show();
                 else
                 {
                     Thread addVacation = new Thread(new Runnable() {
@@ -56,7 +56,7 @@ public class AddVacationRequest extends BaseActivity {
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    Toast.makeText(getApplicationContext(),"dodano urlop",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),getResources().getString(R.string.vacationRequestAdded),Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(),StartActivity.class);
                     startActivity(intent);
 

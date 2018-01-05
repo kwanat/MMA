@@ -3,17 +3,12 @@ package com.example.kwanat.mma_mobilemanagementassistant;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.kwanat.mma_mobilemanagementassistant.DB.ReadDao.EmployeeReadDao;
-import com.example.kwanat.mma_mobilemanagementassistant.DB.ReadDao.WorkstationReadDao;
 import com.example.kwanat.mma_mobilemanagementassistant.DB.Tables.Employee;
-import com.example.kwanat.mma_mobilemanagementassistant.DB.Tables.Workstation;
 import com.example.kwanat.mma_mobilemanagementassistant.DB.WriteDao.EmployeeWriteDao;
 
 public class ChangePasswordActivity extends BaseActivity {
