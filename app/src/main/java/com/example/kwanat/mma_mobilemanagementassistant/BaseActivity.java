@@ -23,26 +23,17 @@ public class BaseActivity extends AppCompatActivity
     public DrawerLayout drawerLayout;
     public ListView drawerList;
     private ActionBarDrawerToggle drawerToggle;
-    Toolbar toolbar;
     ArrayList<String> items;
-
 
     protected void onCreate(Bundle savedInstanceState, int resLayoutID)
     {
         super.onCreate(savedInstanceState);
         setContentView(resLayoutID);
-
-
-
         MenuItems menu =MenuItems.getInstance();
         final LoggedUser user = LoggedUser.getInstance();
         items=menu.getmenu(user.getUser().getId_workstation());
 
-
-        // toolbar= (Toolbar) findViewById(R.id.toolbar);
-        // R.id.drawer_layout should be in every activity with exactly the same id.
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-
         drawerToggle = new ActionBarDrawerToggle((Activity) this, drawerLayout, 0, 0)
         {
             public void onDrawerClosed(View view)
@@ -61,14 +52,11 @@ public class BaseActivity extends AppCompatActivity
         getSupportActionBar().setHomeButtonEnabled(true);
 
         drawerList = (ListView) findViewById(R.id.left_drawer);
-
         drawerList.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_activated_1,
-                items)); //Items is an ArrayList or array with the items you want to put in the Navigation Drawer.
-
+                items));
         drawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View arg1, int pos, long arg3) {
-                // Do what you want when an item from the Navigation Drawer is clicked
                 String item = (String) parent.getAdapter().getItem(pos);
                 Intent intent;
                 if(item.equals(getResources().getString(R.string.homeMenu)))
