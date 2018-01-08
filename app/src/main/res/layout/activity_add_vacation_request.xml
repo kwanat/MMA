@@ -17,12 +17,12 @@
             android:id="@+id/vacationStartDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="213dp"
+            android:layout_marginBottom="51dp"
             android:ems="10"
-            android:hint="Select start date..."
-            android:inputType="textPersonName" />
+            android:hint="@string/startDateHint"
+            android:inputType="textPersonName"
+            android:layout_above="@+id/vacationRequestSubmit"
+            android:layout_centerHorizontal="true" />
 
         <EditText
             android:id="@+id/vacationEndDate"
@@ -32,18 +32,28 @@
             android:layout_alignTop="@+id/vacationStartDate"
             android:layout_marginTop="51dp"
             android:ems="10"
-            android:hint="Select end date..."
+            android:hint="@string/endDateHint"
             android:inputType="textPersonName" />
 
         <Button
             android:id="@+id/vacationRequestSubmit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/vacationEndDate"
+            android:text="@string/submitButton"
+            android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="41dp"
-            android:text="Button" />
-    <!-- Put what you want as your normal screen in here, you can also choose for a linear layout or any other layout, whatever you prefer -->
+            android:layout_marginBottom="39dp" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/vacation_icon"
+            android:layout_marginBottom="10dp"
+            android:layout_above="@+id/vacationStartDate"
+            android:layout_alignParentEnd="true" />
+
+        <!-- Put what you want as your normal screen in here, you can also choose for a linear layout or any other layout, whatever you prefer -->
 </RelativeLayout>
     <!-- The navigation drawer -->
 <ListView

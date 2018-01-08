@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MMA-MobileManagementAssistant</string>
+    <string name="title_activity_login">Zaloguj się</string>
+
+    <!-- Strings related to BUTTONS -->
+    <string name="submitButton">Zatwierdź</string>
+    <string name="addWarehouseItemButton">Dodaj nowy produkt</string>
+    <string name="showCriticalConditionButton">Pokaż towary ze stanem krytycznym</string>
+    <string name="showAllItemsButton">Pokaż wszystkie produkty</string>
+    <string name="loginButton">Zaloguj się</string>
+    <string name="addProductButton">Dodaj produkt</string>
+    <string name="changeStartTimeButton">Zmień godzinę rozpoczęcia</string>
+    <string name="changeEndTimeButton">Zmień godzinę zakończenia</string>
+    <string name="confirmScheduleButton">Zatwierdź grafik</string>
+
+    <!-- Strings related to DATA HINTS -->
+    <string name="loginHint">Login</string>
+    <string name="passwordHint">Hasło</string>
+    <string name="firstNameHint">Imię</string>
+    <string name="lastNameHint">Nazwisko</string>
+    <string name="addressHint">Adres</string>
+    <string name="peselHint">Pesel</string>
+    <string name="phoneNumberHint">Numer telefonu</string>
+    <string name="repeatPasswordHint">Powtórz hasło</string>
+    <string name="newPasswordHint">Nowe hasło</string>
+    <string name="titleHint">Tytuł</string>
+    <string name="messageHint">Komunikat</string>
+    <string name="startDateHint">Wybierz datę rozpoczęcia</string>
+    <string name="endDateHint">Wybierz datę zakończenia</string>
+    <string name="productNameHint">Nazwa produktu</string>
+    <string name="productStartQuantity">Stan magazynowy</string>
+    <string name="productCriticalQuantity">Stan krytyczny</string>
+    <string name="quantityadd">Podaj ilość</string>
+    <string name="startTimeHint">Wybierz godzinę rozpoczęcia</string>
+    <string name="endTimeHint">Wybierz godzinę zakończenia</string>
+    <string name="date">Data</string>
+
+
+    <!-- Strings related to NAVIGATION BAR -->
+    <string name="drawer_open">Menu</string>
+    <string name="drawer_closed">MMA</string>
+    <string name="menu">Menu</string>
+
+    <!-- Strings related to VACATION STATUS -->
+    <string name="statusConfirmed">ZATWIERDZONY</string>
+    <string name="statusRejected">ODRZUCONY</string>
+    <string name="statusUnset">NIEUSTAWIONY</string>
+    <string name="status">status</string>
+
+
+    <!-- Strings related to TOAST -->
+    <string name="dataChanged">Dane zostały zmienione</string>
+    <string name="passwordChanged">Hasło zostało zmienione</string>
+    <string name="passwordsinequal">Podane hasła się różnią</string>
+    <string name="passwordIncorrect">Hasło jest niepoprawne</string>
+    <string name="passwordEmpty">Nowe hasło nie może być puste</string>
+    <string name="incorrectCredencials">Login lub hasło są niepoprawne</string>
+    <string name="databaseConnectionFailed">Błąd połączenia z bazą danych</string>
+    <string name="userAdded">Dodano uzytkownika</string>
+    <string name="loginTaken">Login jest juz zajęty</string>
+    <string name="missingFields">Nie wszystkie pola zostały uzupełnione</string>
+    <string name="messageAdded">Wiadomośc została dodana</string>
+    <string name="vacationRequestAdded">Wniosek został przyjęty</string>
+    <string name="dateLower">Data zakończenia jest wcześniejsza niż rozpoczęcia </string>
+    <string name="emptyField">Pole jest puste</string>
+    <string name="valueTooHigh">Wartość jest zbyt duża</string>
+    <string name="internetNotConnected">Brak połączenia z internetem. Sprawdź swoje połączenie</string>
+
+    <!-- Strings related to MENU -->
+    <string name="homeMenu">START</string>
+    <string name="addMessageMenu">NOWA WIADOMOŚĆ</string>
+    <string name="viewWarehouseMenu">MAGAZYN</string>
+    <string name="changeDataMenu">MOJE DANE</string>
+    <string name="logoutMenu">WYLOGUJ</string>
+    <string name="passwordMenu">ZMIANA HASŁA</string>
+    <string name="myVacationMenu">WNIOSKI URLOPOWE</string>
+
+
+    <string name="addVacationMenu">NOWY WNIOSEK URLOPOWY</string>
+    <string name="scheduleMenu">GRAFIK</string>
+    <string name="showVacationMenu">WNIOSKI URLOPOWE</string>
+    <string name="showEmployeesMenu">PRACOWNICY</string>
+    <string name="addEmployeeMenu">NOWY PRACOWNIK</string>
+
+    <!-- Strings related to DIALOG -->
+    <string name="cancel">ANULUJ</string>
+    <string name="delete">USUŃ</string>
+    <string name="change">MODYFIKUJ</string>
+    <string name="addquantity">DODAJ DO MAGAZYNU</string>
+    <string name="getquantity">POBIERZ Z MAGAZYNU</string>
+    <string name="ok">OK</string>
+    <string name="deluser">Usunąć użytkownika?</string>
+    <string name="approveSchedule">Zatwierdzić grafik?</string>
+
+
+    <!-- Strings related to WAREHOUSE -->
+    <string name="actual">Aktualny status</string>
+    <string name="critical">Krytyczny</string>
+</resources>

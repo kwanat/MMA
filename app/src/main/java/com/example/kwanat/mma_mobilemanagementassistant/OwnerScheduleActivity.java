@@ -1,11 +1,14 @@
 package com.example.kwanat.mma_mobilemanagementassistant;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -22,6 +25,7 @@ import com.example.kwanat.mma_mobilemanagementassistant.DB.ReadDao.ScheduleReadD
 import com.example.kwanat.mma_mobilemanagementassistant.DB.Tables.Employee;
 import com.example.kwanat.mma_mobilemanagementassistant.DB.Tables.Schedule;
 import com.example.kwanat.mma_mobilemanagementassistant.DB.Tables.Vacation;
+import com.example.kwanat.mma_mobilemanagementassistant.DB.WriteDao.EmployeeWriteDao;
 import com.example.kwanat.mma_mobilemanagementassistant.DB.WriteDao.ScheduleWriteDao;
 import com.example.kwanat.mma_mobilemanagementassistant.DB.WriteDao.WarehouseWriteDao;
 
@@ -39,6 +43,8 @@ public class OwnerScheduleActivity extends BaseActivity {
     Intent intent;
     Context context = this;
     String date;
+    AlertDialog.Builder builder;
+    AlertDialog dialog;
 
 
     @Override
@@ -51,9 +57,42 @@ public class OwnerScheduleActivity extends BaseActivity {
         setAdapter();
         setOnclick();
         setDialogBox();
+        buildAlert();
 
     }
 
+    private void buildAlert() {
+        builder = new AlertDialog.Builder(this);
+        builder.setMessage(R.string.approveSchedule);
+        builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+
+                item.setApproved("Y");
+                Thread update = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        ScheduleWriteDao write = new ScheduleWriteDao();
+                        write.update(item);
+                    }
+                });
+                update.start();
+                try {
+                    update.join();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                adapter.notifyDataSetChanged();
+
+                dialogBox.dismiss();
+            }
+        });
+        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                // User cancelled the dialog
+            }
+        });
+        dialog = builder.create();
+    }
     private void setDialogBox() {
         dialogBox = new Dialog(context);
         dialogBox.setContentView(R.layout.custom_dialog_schedules);
@@ -70,6 +109,8 @@ public class OwnerScheduleActivity extends BaseActivity {
 
         final EditText startValue = (EditText) dialogBox.findViewById(R.id.changeStartTimeValue);
         final EditText endValue = (EditText) dialogBox.findViewById(R.id.changeEndTimeValue);
+        startValue.setInputType(InputType.TYPE_NULL);
+        endValue.setInputType(InputType.TYPE_NULL);
 
 
         startButton.setOnClickListener(new View.OnClickListener() {
@@ -107,26 +148,16 @@ public class OwnerScheduleActivity extends BaseActivity {
         confirmSchedule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                item.setApproved("Y");
-                Thread update = new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        ScheduleWriteDao write = new ScheduleWriteDao();
-                        write.update(item);
-                    }
-                });
-                update.start();
-                try {
-                    update.join();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                adapter.notifyDataSetChanged();
+
+
+
+                dialog.show();
                 startSubmitButton.setVisibility(View.GONE);
                 startValue.setVisibility(View.GONE);
                 endSubmitButton.setVisibility(View.GONE);
                 endValue.setVisibility(View.GONE);
-                dialogBox.dismiss();
+
+
             }
         });
 

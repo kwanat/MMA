@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -128,6 +129,9 @@ public class AddVacationRequest extends BaseActivity {
         startDateText = (EditText) findViewById(R.id.vacationStartDate);
         endDateText = (EditText) findViewById(R.id.vacationEndDate);
         submitButton = (Button) findViewById(R.id.vacationRequestSubmit);
+
+        startDateText.setInputType(InputType.TYPE_NULL);
+        endDateText.setInputType(InputType.TYPE_NULL);
 
 
      }

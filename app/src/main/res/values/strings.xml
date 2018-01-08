@@ -63,6 +63,7 @@
     <string name="dateLower">End date is lower than End date </string>
     <string name="emptyField">The field is empty</string>
     <string name="valueTooHigh">Value is to high</string>
+    <string name="internetNotConnected">Internet is not connected. Check your connection</string>
 
     <!-- Strings related to MENU -->
     <string name="homeMenu">HOME</string>
@@ -86,6 +87,9 @@
     <string name="change">CHANGE</string>
     <string name="addquantity">ADD QUANTITY</string>
     <string name="getquantity">GET QUANTITY</string>
+    <string name="ok">OK</string>
+    <string name="deluser">Delete user?</string>
+    <string name="approveSchedule">Approve schedule?</string>
 
 
     <!-- Strings related to WAREHOUSE -->

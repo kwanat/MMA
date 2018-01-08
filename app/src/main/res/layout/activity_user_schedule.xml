@@ -18,34 +18,34 @@
 
         <EditText
             android:id="@+id/scheduleStartTime"
-            android:layout_width="wrap_content"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="199dp"
-            android:hint="@string/startTimeHint"
+            android:layout_marginBottom="128dp"
             android:ems="10"
+            android:hint="@string/startTimeHint"
             android:inputType="time" />
 
         <EditText
             android:id="@+id/scheduleEndTime"
-            android:layout_width="wrap_content"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_alignEnd="@+id/scheduleStartTime"
             android:layout_alignTop="@+id/scheduleStartTime"
             android:layout_marginTop="52dp"
-            android:hint="@string/endTimeHint"
             android:ems="10"
+            android:hint="@string/endTimeHint"
             android:inputType="time" />
 
         <Button
             android:id="@+id/addScheduleSubmitButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="@string/submitButton"
             android:layout_below="@+id/scheduleEndTime"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="39dp"
-            android:text="@string/submitButton" />
+            android:layout_centerHorizontal="true" />
 
         <TextView
             android:id="@+id/dateText"
@@ -56,6 +56,15 @@
             android:layout_alignStart="@+id/scheduleStartTime"
             android:layout_marginBottom="25dp"
             android:text="TextView" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="19dp"
+            app:srcCompat="@drawable/work_icon"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
     </RelativeLayout>
     <!-- The navigation drawer -->
     <ListView

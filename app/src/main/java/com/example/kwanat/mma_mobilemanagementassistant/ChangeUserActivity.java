@@ -51,8 +51,8 @@ public class ChangeUserActivity extends BaseActivity {
     }
 
     private void checkPermissions() {
-        LoggedUser user = LoggedUser.getInstance();
-        if(user.getUser().getId_workstation()!=1)
+        LoggedUser loguser = LoggedUser.getInstance();
+        if((loguser.getUser().getId_workstation()!=1)||(loguser.getUser().getId()==user.getId()))
             worksSpinner.setVisibility(View.GONE);
     }
 

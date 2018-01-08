@@ -1,7 +1,9 @@
 package com.example.kwanat.mma_mobilemanagementassistant;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,17 +26,50 @@ public class ShowEmployeeList extends BaseActivity {
     Employee singleWorker;
     Dialog dialogBox;
     final Context context=this;
+    AlertDialog.Builder builder;
+    AlertDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState, R.layout.activity_show_employee_list);
         emplist= (ListView) findViewById(R.id.employeeList);
         getWorkers();
+        buildAlert();
         setDialogBox();
         setAdapter();
         setOnClick();
     }
 
+    private void buildAlert() {
+       builder = new AlertDialog.Builder(this);
+        builder.setMessage(R.string.deluser);
+        builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                Thread deluser = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        EmployeeWriteDao empdao = new EmployeeWriteDao();
+                        empdao.delete(singleWorker);
+                    }
+                });
+                deluser.start();
+                try {
+                    deluser.join();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                employeeList.remove(singleWorker);
+                adapter.notifyDataSetChanged();
+                dialogBox.dismiss();
+            }
+        });
+        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                // User cancelled the dialog
+            }
+        });
+        dialog = builder.create();
+    }
 
 
     private void setDialogBox() {
@@ -52,6 +87,7 @@ public class ShowEmployeeList extends BaseActivity {
             public void onClick(View v) {
                 Intent intent  = new Intent(getApplicationContext(),ChangeUserActivity.class);
                 intent.putExtra("user_id",singleWorker.getId());
+                dialogBox.dismiss();
                 startActivity(intent);
 
             }
@@ -60,22 +96,11 @@ public class ShowEmployeeList extends BaseActivity {
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Thread deluser = new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        EmployeeWriteDao empdao = new EmployeeWriteDao();
-                        empdao.delete(singleWorker);
-                    }
-                });
-                deluser.start();
-                try {
-                    deluser.join();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                employeeList.remove(singleWorker);
-                adapter.notifyDataSetChanged();
-                dialogBox.dismiss();
+
+
+                dialog.show();
+
+
 
             }
         });
@@ -106,6 +131,7 @@ public class ShowEmployeeList extends BaseActivity {
 
 
     private void setAdapter() {
+
         adapter=new ArrayAdapter<Employee>(getApplicationContext(),android.R.layout.simple_list_item_1,employeeList);
         emplist.setAdapter(adapter);
     }
@@ -123,6 +149,14 @@ public class ShowEmployeeList extends BaseActivity {
             getworkers.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
+        }
+        LoggedUser user = LoggedUser.getInstance();
+        for(int i=0;i<employeeList.size();i++) {
+            if((employeeList.get(i).getId()==user.getUser().getId())||(employeeList.get(i).getId()==1))
+            {
+                employeeList.remove(i);
+                i--;
+           }
         }
     }
 }

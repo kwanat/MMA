@@ -11,27 +11,26 @@
         android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/password"
-        android:layout_alignStart="@+id/password"
-        android:layout_marginBottom="36dp"
         android:ems="10"
         android:hint="@string/loginHint"
         android:inputType="textPersonName"
         tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="248dp" />
+        tools:layout_editor_absoluteY="248dp"
+        android:layout_above="@+id/password"
+        android:layout_alignStart="@+id/password" />
 
     <EditText
         android:id="@+id/password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/login_submit"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="45dp"
+        android:layout_marginBottom="23dp"
         android:ems="10"
         android:hint="@string/passwordHint"
         android:inputType="textPassword"
         tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="325dp" />
+        tools:layout_editor_absoluteY="325dp"
+        android:layout_above="@+id/login_submit"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:id="@+id/login_submit"
@@ -43,4 +42,14 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="37dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/logo2"
+        android:layout_marginBottom="32dp"
+        android:layout_above="@+id/password"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="22dp" />
 </RelativeLayout>

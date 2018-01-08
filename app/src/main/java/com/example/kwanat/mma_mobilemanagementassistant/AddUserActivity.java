@@ -146,8 +146,9 @@ public class AddUserActivity extends BaseActivity {
                 userFirstName=userFirstNameText.getText().toString();
                 userName=userNameText.getText().toString();
                 userLogin=userLoginText.getText().toString();
-                userPassword=Sha1Crypt.encryptPassword(userPasswordText.getText().toString());
+                userPassword=userPasswordText.getText().toString();
                 if(checkfields()) {
+                    userPassword=Sha1Crypt.encryptPassword(userPassword);
                     checkUser();
                     if (newuser != null) {
                         Toast.makeText(getApplicationContext(), getResources().getString(R.string.loginTaken), Toast.LENGTH_LONG).show();

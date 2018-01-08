@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.view.menu.SubMenuBuilder;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -171,5 +172,8 @@ public class UserScheduleActivity extends BaseActivity {
         endTime = (EditText) findViewById(R.id.scheduleEndTime);
         submitButton = (Button) findViewById(R.id.addScheduleSubmitButton);
         dateText = (TextView) findViewById(R.id.dateText);
+
+        startTime.setInputType(InputType.TYPE_NULL);
+        endTime.setInputType(InputType.TYPE_NULL);
     }
 }
